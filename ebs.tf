@@ -27,7 +27,5 @@ resource "aws_dynamodb_table" "tfc_example_table" {
     name = "UUID"
     type = "S"
   }
-  point_in_time_recovery {
-    enabled = true
-  }
+
 }
