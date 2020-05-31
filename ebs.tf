@@ -10,3 +10,20 @@ provider "aws" {
   profile = "default"
   region  = "us-west-2"
 }
+
+provider "random" {
+  version = "2.2"
+}
+
+resource "aws_dynamodb_table" "tfc_example_table" {
+  name = "petstore-table"
+
+  read_capacity  = 5
+  write_capacity = 5
+  hash_key       = "UUID"
+
+  attribute {
+    name = "UUID"
+    type = "S"
+  }
+}
