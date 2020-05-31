@@ -1,7 +1,12 @@
 resource "aws_ebs_volume" "web_host_storage" {
-  availability_zone = "${var.availability_zone}"
-  size              = 1
+  availability_zone = "us-west-2a"
+  size              = 10
   tags = {
-    Name = "${local.resource_prefix.value}-ebs"
+    Name = "bridgecrew-terraform-cloud-ebs"
   }
+}
+
+provider "aws" {
+  profile = "default"
+  region  = "us-west-2"
 }
