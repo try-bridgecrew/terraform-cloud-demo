@@ -14,3 +14,4 @@ jobs:
         uses: bridgecrewio/bridgecrew-action@master
         with:
           api-key: ${{secrets.bridgecrew_api_key}}
+          external-checks-dir: test
