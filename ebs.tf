@@ -4,7 +4,7 @@ resource "aws_ebs_volume" "web_host_storage" {
   tags = {
     Name = "bridgecrew-terraform-cloud-ebs"
   }
-  encrypted = true
+  encrypted = false
 }
 
 provider "aws" {
