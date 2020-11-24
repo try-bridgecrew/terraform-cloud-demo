@@ -83,6 +83,12 @@ Resources:
       TTL: '900'
       ResourceRecords:
       - !GetAtt [WebsiteCDN, DomainName]
+  yaml:AWS::S3::Bucket:
+    Properties:
+      VersioningConfiguration:
+        Status: Enabled
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: True
 Outputs:
   WebsiteURL:
     Value: !Join ['', ['http://', !Ref 'WebsiteDNSName']]
