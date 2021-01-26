@@ -2,6 +2,7 @@ resource "google_storage_bucket" "static-site" {
   name          = "image-store.com"
   location      = "EU"
   force_destroy = true
+  region = "us-west1"
 
   uniform_bucket_level_access = true
 
